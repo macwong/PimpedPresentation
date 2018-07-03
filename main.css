@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Mukta-Regular;
 }
 
 /* Position and sizing of burger button */
@@ -31,8 +32,9 @@ body {
   /* General sidebar styles */
   .bm-menu {
     background: #373a47;
-    padding: 2.5em 1.5em 0;
+    padding: 30px 0 10px 0;
     font-size: 1.15em;
+    height: auto !important;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -43,7 +45,7 @@ body {
   /* Wrapper for item list */
   .bm-item-list {
     color: #b8b7ad;
-    padding: 0.8em;
+    padding: 8px;
   }
   
   /* Individual item */
@@ -55,3 +57,134 @@ body {
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+
+.bm-menu-wrap {
+    background-color: #373a47;
+}
+
+
+
+
+
+  div a {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+  
+  div.section {
+    width: 100%;
+  }
+  
+  .crosshair .link-effect-14 a {
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    font-family: Comfortaa-Bold;
+  }
+  .crosshair .link-effect-14 a span::before {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 2px solid tomato;
+    border-left: 2px solid tomato;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .crosshair .link-effect-14 a span::after {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-right: 2px solid tomato;
+    border-bottom: 2px solid tomato;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .crosshair .link-effect-14 a::before {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: 2px solid tomato;
+    border-top: 2px solid tomato;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .crosshair .link-effect-14 a::after {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-left: 2px solid tomato;
+    border-bottom: 2px solid tomato;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .crosshair .link-effect-14 a:hover {
+    color: tomato;
+  }
+  .crosshair .link-effect-14 a:hover::before {
+    opacity: 1;
+    right: 5px;
+    top: 5px;
+  }
+  .crosshair .link-effect-14 a:hover::after {
+    opacity: 1;
+    left: 5px;
+    bottom: 5px;
+  }
+  .crosshair .link-effect-14 a:hover span::before {
+    opacity: 1;
+    left: 5px;
+    top: 5px;
+  }
+  .crosshair .link-effect-14 a:hover span::after {
+    opacity: 1;
+    right: 5px;
+    bottom: 5px;
+  }
+
+
+  @font-face {
+    font-family: 'Comfortaa-Bold';
+    src: url('Comfortaa-Bold.ttf');
+  }
+  
+  
+  @font-face {
+    font-family: 'Mukta-Regular';
+    src: url('Mukta-Regular.ttf');
+  }
+  
