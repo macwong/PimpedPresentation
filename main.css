@@ -4,18 +4,38 @@ body {
     font-family: Mukta-Regular;
 }
 
+header {
+    background-color: #373a47;
+    height: 57px;
+}
+
+.title {
+    line-height: 57px;
+    margin-left: 60px;
+    color: white;
+    font-family: Comfortaa-Bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    font-size: 1.15em;
+}
+
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
-    width: 24px;
-    height: 20px;
-    left: 24px;
-    top: 24px;
+    width: 20px;
+    height: 16px;
+    left: 20px;
+    top: 20px;
   }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: white;
+  }
+
+  .bm-burger-button:hover .bm-burger-bars {
+    background-color: tomato !important;
+    opacity: 1 !important;
   }
   
   /* Position and sizing of clickable cross button */

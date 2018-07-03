@@ -6,7 +6,6 @@ export default class PimpedMenu extends Component {
     return (
         <div id="outer-container">
             <Menu 
-                isOpen={ true } 
                 pageWrapId={ "page-wrap" } 
                 outerContainerId={ "outer-container" }
                 width={350}
@@ -22,7 +21,9 @@ export default class PimpedMenu extends Component {
                 </div>
             </Menu>
             <main id="page-wrap">
-                <div>This is a test</div>
+                <header>
+                  <div class="title">This is a test</div>
+                </header>
             </main>
         </div>
     );
