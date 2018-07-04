@@ -9,6 +9,10 @@ header {
     height: 57px;
 }
 
+.hidden {
+    display: none;
+}
+
 .title {
     line-height: 57px;
     margin-left: 60px;
