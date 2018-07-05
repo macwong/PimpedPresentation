@@ -50,10 +50,16 @@ export default class PimpedMenu extends Component {
 
     renderBreadcrumbTitle(index) {
         switch(index) {
-          case 0:
-            return 'Add Face';
-          default:
-            return 'This is a long test';
+            case 0:
+                return "Input";
+            case 1:
+                return "Find Face";
+            case 2:
+                return "Convert";
+            case 3:
+                return "Predict";
+            default:
+                return "Extra";
         }
     }
 
