@@ -63,7 +63,7 @@ export default class PimpedMenu extends Component {
                 return (
                     <a>
                         <span>{i + 1}</span>
-                        <span>
+                        <span className="breadcrumb-description">
                             {this.renderBreadcrumbTitle(i)}
                         </span>
                     </a>
@@ -145,6 +145,12 @@ export default class PimpedMenu extends Component {
                                     </div>
                                     <div>
                                         Test 2
+                                    </div>
+                                    <div>
+                                        Test 3
+                                    </div>
+                                    <div>
+                                        Test 4
                                     </div>
                                 </Slider>
                             </div>

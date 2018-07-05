@@ -301,7 +301,6 @@ ul.breadcrumbs {
 
 .breadcrumbs li {
   float: left;
-  width: 180px;
 }
 
 .breadcrumbs a {
@@ -322,8 +321,8 @@ ul.breadcrumbs {
 }
 
 .breadcrumbs li.slick-active a {
-  color: #777;
-  background-color: #fafafa;
+  color: white;
+  background-color: #373a47;
 }
 
 .breadcrumbs a span:first-child {
@@ -339,8 +338,8 @@ ul.breadcrumbs {
 
 .breadcrumbs li.slick-active a span:first-child {
   color: #fff;
-  border-color: #777;
-  background-color: #777;
+  border-color: tomato;
+  background-color: tomato;
 }
 
 .breadcrumbs a:before,
@@ -372,12 +371,16 @@ ul.breadcrumbs {
 }
 
 .breadcrumbs li.slick-active a:after {
-  border-left-color: #fafafa;
+  border-left-color: #373a47;
 }
 
 .breadcrumbs li:last-child a:before,
 .breadcrumbs li:last-child a:after {
   display: none;
+}
+
+.breadcrumb-description {
+  padding-right: 10px;
 }
 
 @media (max-width: 720px) {
