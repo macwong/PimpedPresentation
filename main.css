@@ -303,6 +303,10 @@ ul.breadcrumbs {
   float: left;
 }
 
+.breadcrumbs li:not(:first-child) a {
+  padding-left: 30px;
+}
+
 .breadcrumbs a {
   position: relative;
   display: block;
@@ -381,6 +385,10 @@ ul.breadcrumbs {
 
 .breadcrumb-description {
   padding-right: 10px;
+}
+
+.breadcrumbs li:last-child .breadcrumb-description {
+  padding-right: 20px;
 }
 
 @media (max-width: 720px) {
