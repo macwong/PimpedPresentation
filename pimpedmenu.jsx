@@ -48,40 +48,25 @@ export default class PimpedMenu extends Component {
         return this.state.currentTitle === title ? "selected" : "";
     }
 
+    renderBreadcrumbTitle(index) {
+        switch(index) {
+          case 0:
+            return 'Add Face';
+          default:
+            return 'This is a long test';
+        }
+    }
+
     render () {
         const settings = {
             customPaging: (i) => {
                 return (
-                        // <ul class='cf'>
-                        <a>
-                        <span>1</span>
-                        <span>Home</span>
-                        </a>
-                        // <li>
-                        //     <a className='active'>
-                        //     <span>2</span>
-                        //     <span>Service</span>
-                        //     </a>
-                        // </li>
-                        // <li>
-                        //     <a>
-                        //     <span>3</span>
-                        //     <span>Menu</span>
-                        //     </a>
-                        // </li>
-                        // <li>
-                        //     <a>
-                        //     <span>4</span>
-                        //     <span>Checkout</span>
-                        //     </a>
-                        // </li>
-                        // <li>
-                        //     <a>
-                        //     <span>5</span>
-                        //     <span>Success</span>
-                        //     </a>
-                        // </li>
-                        // </ul>
+                    <a>
+                        <span>{i + 1}</span>
+                        <span>
+                            {this.renderBreadcrumbTitle(i)}
+                        </span>
+                    </a>
 
                 );
             },
