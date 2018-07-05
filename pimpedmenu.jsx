@@ -50,7 +50,43 @@ export default class PimpedMenu extends Component {
 
     render () {
         const settings = {
+            customPaging: (i) => {
+                return (
+                        // <ul class='cf'>
+                        <a>
+                        <span>1</span>
+                        <span>Home</span>
+                        </a>
+                        // <li>
+                        //     <a className='active'>
+                        //     <span>2</span>
+                        //     <span>Service</span>
+                        //     </a>
+                        // </li>
+                        // <li>
+                        //     <a>
+                        //     <span>3</span>
+                        //     <span>Menu</span>
+                        //     </a>
+                        // </li>
+                        // <li>
+                        //     <a>
+                        //     <span>4</span>
+                        //     <span>Checkout</span>
+                        //     </a>
+                        // </li>
+                        // <li>
+                        //     <a>
+                        //     <span>5</span>
+                        //     <span>Success</span>
+                        //     </a>
+                        // </li>
+                        // </ul>
+
+                );
+            },
             dots: true,
+            dotsClass: "cf breadcrumbs inner",
             fade: true,
             infinite: true,
             speed: 500,
