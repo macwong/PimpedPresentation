@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import Slider from 'react-slick';
+
+// https://github.com/negomi/react-burger-menu
 
 const sectionIDs = {
     home: "home",
@@ -46,6 +49,15 @@ export default class PimpedMenu extends Component {
     }
 
     render () {
+        const settings = {
+            dots: true,
+            fade: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
         return (
             <div id="outer-container">
                 <Menu 
@@ -79,7 +91,7 @@ export default class PimpedMenu extends Component {
                     <header>
                         <div className="title">{this.state.currentTitle}</div>
                     </header>
-                    <div className="sections">
+                    <section className="sections">
                         <div id={sectionIDs.home} className={this.showHideSection(sectionIDs.home)}>
                             Home
                         </div>
@@ -89,10 +101,34 @@ export default class PimpedMenu extends Component {
                         <div id={sectionIDs.contact} className={this.showHideSection(sectionIDs.contact)}>
                             Contact
                         </div>
-                        <div id={sectionIDs.stuff} className={this.showHideSection(sectionIDs.stuff)}>
-                            Stuff
+                        <div id={sectionIDs.stuff} className={"stuff " + this.showHideSection(sectionIDs.stuff)}>
+                            <div>
+                                <Slider {...settings}>
+                                    <div>
+                                        <div className="box">
+                                            <div className="row header">
+                                                <p><b>header</b>
+                                                <br />
+                                                <br />(sized to content)</p>
+                                            </div>
+                                            <div className="row content">
+                                                <p>
+                                                <b>content</b>
+                                                (fills remaining space)
+                                                </p>
+                                            </div>
+                                            <div className="row footer">
+                                                <p><b>footer</b> (fixed height)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        Test 2
+                                    </div>
+                                </Slider>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </main>
             </div>
         );
