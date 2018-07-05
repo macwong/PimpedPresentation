@@ -41,6 +41,10 @@ export default class PimpedMenu extends Component {
         return this.state.currentSection === section ? "" : "hidden";
     }
 
+    highlightSection(title) {
+        return this.state.currentTitle === title ? "selected" : "";
+    }
+
     render () {
         return (
             <div id="outer-container">
@@ -55,7 +59,8 @@ export default class PimpedMenu extends Component {
                             {  
                                 sections.map((section) => {
                                     return (
-                                        <a 
+                                        <a
+                                            className={this.highlightSection(section.title)} 
                                             key={section.title} 
                                             href="#" 
                                             onClick={this.onOptionClick.bind(this)}

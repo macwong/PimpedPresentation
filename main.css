@@ -176,25 +176,30 @@ header {
     transition: 0.3s;
     opacity: 0;
   }
-  .crosshair .link-effect-14 a:hover {
+  .crosshair .link-effect-14 a:hover,
+  .crosshair .link-effect-14 a.selected {
     color: tomato;
   }
-  .crosshair .link-effect-14 a:hover::before {
+  .crosshair .link-effect-14 a:hover::before,
+  .crosshair .link-effect-14 a.selected::before {
     opacity: 1;
     right: 5px;
     top: 5px;
   }
-  .crosshair .link-effect-14 a:hover::after {
+  .crosshair .link-effect-14 a:hover::after,
+  .crosshair .link-effect-14 a.selected::after {
     opacity: 1;
     left: 5px;
     bottom: 5px;
   }
-  .crosshair .link-effect-14 a:hover span::before {
+  .crosshair .link-effect-14 a:hover span::before,
+  .crosshair .link-effect-14 a.selected span::before {
     opacity: 1;
     left: 5px;
     top: 5px;
   }
-  .crosshair .link-effect-14 a:hover span::after {
+  .crosshair .link-effect-14 a:hover span::after,
+  .crosshair .link-effect-14 a.selected span::after {
     opacity: 1;
     right: 5px;
     bottom: 5px;
