@@ -22,7 +22,8 @@ export default class PimpedMenu extends Component {
 
         this.state = {
             isOpen: false,
-            currentSection: sectionIDs.home
+            currentSection: sectionIDs.home,
+            currentTitle: "Home"
         };
 
         this.onOptionClick = this.onOptionClick.bind(this);
@@ -31,7 +32,8 @@ export default class PimpedMenu extends Component {
     onOptionClick(e) {
         this.setState({
             isOpen: false,
-            currentSection: e.currentTarget.dataset.section
+            currentSection: e.currentTarget.dataset.section,
+            currentTitle: e.currentTarget.dataset.title
         });
     }
 
@@ -58,6 +60,7 @@ export default class PimpedMenu extends Component {
                                             href="#" 
                                             onClick={this.onOptionClick.bind(this)}
                                             data-section={section.section}
+                                            data-title={section.title}
                                         >
                                             <span>{section.title}</span>
                                         </a>
@@ -69,7 +72,7 @@ export default class PimpedMenu extends Component {
                 </Menu>
                 <main id="page-wrap">
                     <header>
-                        <div className="title">This is a test</div>
+                        <div className="title">{this.state.currentTitle}</div>
                     </header>
                     <div className="sections">
                         <div id={sectionIDs.home} className={this.showHideSection(sectionIDs.home)}>
