@@ -13,6 +13,10 @@ body {
     font-family: Mukta-Regular;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /*#endregion Global Styles*/
 
 /*#region Header*/
@@ -34,9 +38,7 @@ header {
 
 /*#endregion Header*/
 
-.hidden {
-    display: none !important;
-}
+
 
 .slider-section {
     padding: 20px 30px;

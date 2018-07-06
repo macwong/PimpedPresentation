@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SliderSection from './slidersection';
 import NavMenu from './navmenu';
 import Globals from '../../js/globals';
+import Welcome from './welcome';
 
 export default class PimpedMenu extends Component {
     constructor(props) {
@@ -54,21 +55,11 @@ export default class PimpedMenu extends Component {
                         <div className="title">{this.state.currentTitle}</div>
                     </header>
                     <section className="sections">
-                        <div id={Globals.sectionIDs.home} className={"welcome-section " + this.showHideSection(Globals.sectionIDs.home)}>
-                            <div className="wrapper">
-                                <div className="item">
-                                    <div className="polaroid" onClick={this.onPolaroidClick}>
-                                        <div className="welcome-title">
-                                            Let's face it,<br />
-                                            Facial Recognition<br />
-                                            Is in your face
-                                        </div>
-                                        <img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg" />
-                                        <div className="caption">Dave McCormick</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Welcome
+                            section={Globals.sectionIDs.home}
+                            cssClass={this.showHideSection(Globals.sectionIDs.home)}
+                            onPolaroidClick={this.onPolaroidClick}
+                        />
                         <div id={Globals.sectionIDs.about} className={this.showHideSection(Globals.sectionIDs.about)}>
                             About
                         </div>
