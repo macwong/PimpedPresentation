@@ -160,6 +160,7 @@
   
   .breadcrumb-description {
     padding-right: 10px;
+    padding-left: 7px;
   }
   
   .breadcrumbs li:last-child .breadcrumb-description {
