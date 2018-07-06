@@ -46,43 +46,7 @@ export default class PimpedMenu extends Component {
         return this.state.currentTitle === title ? "selected" : "";
     }
 
-    renderBreadcrumbTitle(index) {
-        switch(index) {
-            case 0:
-                return "Input";
-            case 1:
-                return "Find Face";
-            case 2:
-                return "Convert";
-            case 3:
-                return "Predict";
-            default:
-                return "Extra";
-        }
-    }
-
     render () {
-        const settings = {
-            customPaging: (i) => {
-                return (
-                    <a>
-                        <span>{i + 1}</span>
-                        <span className="breadcrumb-description">
-                            {this.renderBreadcrumbTitle(i)}
-                        </span>
-                    </a>
-
-                );
-            },
-            dots: true,
-            dotsClass: "cf breadcrumbs inner",
-            fade: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
-
         return (
             <div id="outer-container">
                 <Menu 
@@ -117,7 +81,7 @@ export default class PimpedMenu extends Component {
                         <div className="title">{this.state.currentTitle}</div>
                     </header>
                     <section className="sections">
-                        <div id={sectionIDs.home} className={this.showHideSection(sectionIDs.home)}>
+                        <div id={sectionIDs.home} className={"welcome-section " + this.showHideSection(sectionIDs.home)}>
                             Home
                         </div>
                         <div id={sectionIDs.about} className={this.showHideSection(sectionIDs.about)}>
@@ -130,7 +94,6 @@ export default class PimpedMenu extends Component {
                         <SliderSection 
                             section={sectionIDs.stuff} 
                             cssClass={this.showHideSection(sectionIDs.stuff)}
-                            settings={settings}
                         />
                     </section>
                 </main>

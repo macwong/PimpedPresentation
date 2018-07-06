@@ -6,11 +6,47 @@ export default class SliderSection extends Component {
         super(props);
     }
 
+    renderBreadcrumbTitle(index) {
+        switch(index) {
+            case 0:
+                return "Input";
+            case 1:
+                return "Find Face";
+            case 2:
+                return "Convert";
+            case 3:
+                return "Predict";
+            default:
+                return "Extra";
+        }
+    }
+
     render() {
+        const settings = {
+            customPaging: (i) => {
+                return (
+                    <a>
+                        <span>{i + 1}</span>
+                        <span className="breadcrumb-description">
+                            {this.renderBreadcrumbTitle(i)}
+                        </span>
+                    </a>
+
+                );
+            },
+            dots: true,
+            dotsClass: "cf breadcrumbs inner",
+            fade: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
         return (
             <div id={this.props.section} className={"slider-section " + this.props.cssClass}>
             <div>
-                <Slider {...this.props.settings}>
+                <Slider {...settings}>
                     <div>
                         <div className="box">
                             <div className="row header">

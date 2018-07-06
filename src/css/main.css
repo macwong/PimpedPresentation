@@ -17,7 +17,7 @@ header {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .title {
@@ -39,7 +39,19 @@ header {
     flex-direction: column;
 }
 
-
+.welcome-section {
+  display: flex;
+  color: white;
+  background-color: #373a47;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: -30px;
+}
 
 
 
