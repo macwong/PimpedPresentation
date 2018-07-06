@@ -9,3 +9,5 @@ export default class Actions {
 
     static get MENU_OPEN() {
         return "MENU_OPEN";
+    }
+}
