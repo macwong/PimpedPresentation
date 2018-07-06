@@ -23,7 +23,7 @@ export default class NavMenu extends Component {
                 outerContainerId={ "outer-container" }
                 width={350}
             >
-                <div className="crosshair section">
+                <div className="crosshair">
                     <nav className="link-effect-14" id="link-effect-14">
                         {  
                             sections.map((section) => {
