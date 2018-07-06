@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import Slider from 'react-slick';
-
-// https://github.com/negomi/react-burger-menu
+import SliderSection from './slidersection';
 
 const sectionIDs = {
     home: "home",
@@ -128,39 +126,12 @@ export default class PimpedMenu extends Component {
                         <div id={sectionIDs.contact} className={this.showHideSection(sectionIDs.contact)}>
                             Contact
                         </div>
-                        <div id={sectionIDs.stuff} className={"stuff " + this.showHideSection(sectionIDs.stuff)}>
-                            <div>
-                                <Slider {...settings}>
-                                    <div>
-                                        <div className="box">
-                                            <div className="row header">
-                                                <p><b>header</b>
-                                                <br />
-                                                <br />(sized to content)</p>
-                                            </div>
-                                            <div className="row content">
-                                                <p>
-                                                <b>content</b>
-                                                (fills remaining space)
-                                                </p>
-                                            </div>
-                                            <div className="row footer">
-                                                <p><b>footer</b> (fixed height)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        Test 2
-                                    </div>
-                                    <div>
-                                        Test 3
-                                    </div>
-                                    <div>
-                                        Test 4
-                                    </div>
-                                </Slider>
-                            </div>
-                        </div>
+
+                        <SliderSection 
+                            section={sectionIDs.stuff} 
+                            cssClass={this.showHideSection(sectionIDs.stuff)}
+                            settings={settings}
+                        />
                     </section>
                 </main>
             </div>
