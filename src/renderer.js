@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PimpedMenu from '../pimpedmenu';
+import PimpedMenu from '../src/components/pimpedmenu';
 
 ReactDOM.render(
     <PimpedMenu />,
