@@ -467,6 +467,7 @@ ul.breadcrumbs {
   background: #fff;
   padding: 1rem;
   box-shadow: 0 0.2rem 1.2rem rgba(255, 255, 255, 0.4);
+  cursor: pointer;
   
 }
 .polaroid > img {
