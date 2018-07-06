@@ -1,21 +1,7 @@
 import React, {Component} from 'react';
-import { slide as Menu } from 'react-burger-menu';
 import SliderSection from './slidersection';
-
-const sectionIDs = {
-    home: "home",
-    about: "about",
-    contact: "contact",
-    stuff: "stuff",
-}
-
-const sections = [
-    { title: "Home", section: sectionIDs.home },
-    { title: "About", section: sectionIDs.about },
-    { title: "Contact", section: sectionIDs.contact },
-    { title: "Stuff", section: sectionIDs.stuff },
-    { title: "Blah", section: sectionIDs.home }
-];
+import NavMenu from './navmenu';
+import Globals from '../../js/globals';
 
 export default class PimpedMenu extends Component {
     constructor(props) {
@@ -23,10 +9,12 @@ export default class PimpedMenu extends Component {
 
         this.state = {
             isOpen: false,
-            currentSection: sectionIDs.home,
+            currentSection: Globals.sectionIDs.home,
             currentTitle: "Home"
         };
 
+        this.highlightSection = this.highlightSection.bind(this);
+        this.showHideSection = this.showHideSection.bind(this);
         this.onOptionClick = this.onOptionClick.bind(this);
         this.onPolaroidClick = this.onPolaroidClick.bind(this);
     }
@@ -56,39 +44,17 @@ export default class PimpedMenu extends Component {
     render () {
         return (
             <div id="outer-container">
-                <Menu 
+                <NavMenu
                     isOpen={this.state.isOpen}
-                    pageWrapId={ "page-wrap" } 
-                    outerContainerId={ "outer-container" }
-                    width={350}
-                >
-                    <div className="crosshair section">
-                        <nav className="link-effect-14" id="link-effect-14">
-                            {  
-                                sections.map((section) => {
-                                    return (
-                                        <a
-                                            className={this.highlightSection(section.title)} 
-                                            key={section.title} 
-                                            href="#" 
-                                            onClick={this.onOptionClick.bind(this)}
-                                            data-section={section.section}
-                                            data-title={section.title}
-                                        >
-                                            <span>{section.title}</span>
-                                        </a>
-                                    )
-                                })
-                            }    
-                        </nav>
-                    </div>
-                </Menu>
+                    highlightCallback={this.highlightSection}
+                    onOptionClick={this.onOptionClick}
+                />
                 <main id="page-wrap">
                     <header>
                         <div className="title">{this.state.currentTitle}</div>
                     </header>
                     <section className="sections">
-                        <div id={sectionIDs.home} className={"welcome-section " + this.showHideSection(sectionIDs.home)}>
+                        <div id={Globals.sectionIDs.home} className={"welcome-section " + this.showHideSection(Globals.sectionIDs.home)}>
                             <div className="wrapper">
                                 <div className="item">
                                     <div className="polaroid" onClick={this.onPolaroidClick}>
@@ -103,16 +69,16 @@ export default class PimpedMenu extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div id={sectionIDs.about} className={this.showHideSection(sectionIDs.about)}>
+                        <div id={Globals.sectionIDs.about} className={this.showHideSection(Globals.sectionIDs.about)}>
                             About
                         </div>
-                        <div id={sectionIDs.contact} className={this.showHideSection(sectionIDs.contact)}>
+                        <div id={Globals.sectionIDs.contact} className={this.showHideSection(Globals.sectionIDs.contact)}>
                             Contact
                         </div>
 
                         <SliderSection 
-                            section={sectionIDs.stuff} 
-                            cssClass={this.showHideSection(sectionIDs.stuff)}
+                            section={Globals.sectionIDs.stuff} 
+                            cssClass={this.showHideSection(Globals.sectionIDs.stuff)}
                         />
                     </section>
                 </main>
