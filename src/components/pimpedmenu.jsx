@@ -82,7 +82,14 @@ export default class PimpedMenu extends Component {
                     </header>
                     <section className="sections">
                         <div id={sectionIDs.home} className={"welcome-section " + this.showHideSection(sectionIDs.home)}>
-                            Home
+                            <div className="wrapper">
+                                <div className="item">
+                                    <div className="polaroid">
+                                    <img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg" />
+                                        <div className="caption">Dave McCormick</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id={sectionIDs.about} className={this.showHideSection(sectionIDs.about)}>
                             About
