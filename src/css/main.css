@@ -52,6 +52,20 @@ header {
   bottom: 0;
 }
 
+.welcome-title {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom:85px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 
@@ -481,7 +495,7 @@ ul.breadcrumbs {
   font-family: 'PoorStory-Regular';
 }
 .item {
-  width: 60%;
+  width: 500px;
   display: inline-block;
   margin-top: 2rem;
   filter: grayscale(100%);
