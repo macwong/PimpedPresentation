@@ -1,10 +1,30 @@
 import React, {Component} from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import Globals from '../../js/globals';
+import { onMenuClick, updateMenuIsOpen } from '../actions/actions';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-export default class NavMenu extends Component {
+class NavMenu extends Component {
     constructor(props) {
         super(props);
+
+        this.onMenuClick = this.onMenuClick.bind(this);
+        this.updateIsOpen = this.updateIsOpen.bind(this);
+        this.highlightSection = this.highlightSection.bind(this);
+    }
+
+    onMenuClick(e) {
+        this.props.onMenuClick(e);
+    }
+
+    updateIsOpen(state) {
+        this.props.updateMenuIsOpen(state.isOpen);
+    }
+
+    highlightSection(title) {
+        console.log(this.props.currentTitle, title);
+        return this.props.currentTitle === title ? "selected" : "";
     }
 
     render() {
@@ -22,6 +42,7 @@ export default class NavMenu extends Component {
                 pageWrapId={ "page-wrap" } 
                 outerContainerId={ "outer-container" }
                 width={350}
+                onStateChange={this.updateIsOpen}
             >
                 <div className="crosshair">
                     <nav className="link-effect-14" id="link-effect-14">
@@ -29,10 +50,10 @@ export default class NavMenu extends Component {
                             sections.map((section) => {
                                 return (
                                     <a
-                                        className={this.props.highlightCallback(section.title)} 
+                                        className={this.highlightSection(section.title)} 
                                         key={section.title} 
                                         href="#" 
-                                        onClick={this.props.onOptionClick}
+                                        onClick={this.onMenuClick}
                                         data-section={section.section}
                                         data-title={section.title}
                                         data-showtitle={section.showTitle}
@@ -48,3 +69,13 @@ export default class NavMenu extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return state.menu;
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ onMenuClick, updateMenuIsOpen }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavMenu);

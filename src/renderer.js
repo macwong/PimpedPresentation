@@ -4,9 +4,16 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PimpedMenu from '../src/components/pimpedmenu';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import PimpedMenu from '../src/containers/pimpedmenu';
+import reducers from './reducers/root';
+
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-    <PimpedMenu />,
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <PimpedMenu />
+    </Provider>,
     document.getElementById("container")
 );
