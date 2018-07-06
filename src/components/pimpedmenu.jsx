@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SliderSection from './slidersection';
 import NavMenu from './navmenu';
 import Globals from '../../js/globals';
+import Helpers from '../../js/helpers';
 import Welcome from './welcome';
 
 export default class PimpedMenu extends Component {
@@ -10,8 +11,8 @@ export default class PimpedMenu extends Component {
 
         this.state = {
             isOpen: false,
-            currentSection: Globals.sectionIDs.home,
-            currentTitle: "Home"
+            currentSection: Globals.sectionIDs.welcome,
+            currentTitle: ""
         };
 
         this.highlightSection = this.highlightSection.bind(this);
@@ -27,10 +28,18 @@ export default class PimpedMenu extends Component {
     }
 
     onOptionClick(e) {
+        const section = e.currentTarget.dataset.section;
+        const showTitle = Helpers.ToBoolean(e.currentTarget.dataset.showtitle);
+        let title = e.currentTarget.dataset.title;
+        
+        if (!showTitle) {
+            title = "";
+        }
+
         this.setState({
             isOpen: false,
-            currentSection: e.currentTarget.dataset.section,
-            currentTitle: e.currentTarget.dataset.title
+            currentSection: section,
+            currentTitle: title
         });
     }
 
@@ -56,8 +65,8 @@ export default class PimpedMenu extends Component {
                     </header>
                     <section className="sections">
                         <Welcome
-                            section={Globals.sectionIDs.home}
-                            cssClass={this.showHideSection(Globals.sectionIDs.home)}
+                            section={Globals.sectionIDs.welcome}
+                            cssClass={this.showHideSection(Globals.sectionIDs.welcome)}
                             onPolaroidClick={this.onPolaroidClick}
                         />
                         <div id={Globals.sectionIDs.about} className={this.showHideSection(Globals.sectionIDs.about)}>

@@ -1,7 +1,7 @@
 export default class Globals {
     static get sectionIDs() { 
         return {
-            home: "home",
+            welcome: "welcome",
             about: "about",
             contact: "contact",
             stuff: "stuff",

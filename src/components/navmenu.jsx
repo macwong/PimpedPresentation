@@ -9,11 +9,11 @@ export default class NavMenu extends Component {
 
     render() {
         const sections = [
-            { title: "Home", section: Globals.sectionIDs.home },
-            { title: "About", section: Globals.sectionIDs.about },
-            { title: "Contact", section: Globals.sectionIDs.contact },
-            { title: "Stuff", section: Globals.sectionIDs.stuff },
-            { title: "Blah", section: Globals.sectionIDs.home }
+            { title: "Welcome", section: Globals.sectionIDs.welcome, showTitle: false },
+            { title: "About", section: Globals.sectionIDs.about, showTitle: true },
+            { title: "Contact", section: Globals.sectionIDs.contact, showTitle: true },
+            { title: "Stuff", section: Globals.sectionIDs.stuff, showTitle: true },
+            { title: "Blah", section: Globals.sectionIDs.welcome, showTitle: false }
         ];
 
         return (
@@ -35,6 +35,7 @@ export default class NavMenu extends Component {
                                         onClick={this.props.onOptionClick}
                                         data-section={section.section}
                                         data-title={section.title}
+                                        data-showtitle={section.showTitle}
                                     >
                                         <span>{section.title}</span>
                                     </a>

@@ -8,7 +8,7 @@ export default class Welcome extends Component {
 
     render() {
         return (
-            <div id={Globals.sectionIDs.home} className={"welcome-section " + this.props.cssClass}>
+            <div id={Globals.sectionIDs.welcome} className={"welcome-section " + this.props.cssClass}>
                 <div className="wrapper">
                     <div className="item">
                         <div className="polaroid" onClick={this.props.onPolaroidClick}>
@@ -17,7 +17,7 @@ export default class Welcome extends Component {
                                 Facial Recognition<br />
                                 Is in your face
                             </div>
-                            <img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg" />
+                            <img src="face.jpg" />
                             <div className="caption">Dave McCormick</div>
                         </div>
                     </div>
