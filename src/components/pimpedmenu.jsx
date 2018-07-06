@@ -92,7 +92,7 @@ export default class PimpedMenu extends Component {
                             <div className="wrapper">
                                 <div className="item">
                                     <div className="polaroid" onClick={this.onPolaroidClick}>
-                                        <div class="welcome-title">
+                                        <div className="welcome-title">
                                             Let's face it,<br />
                                             Facial Recognition<br />
                                             Is in your face

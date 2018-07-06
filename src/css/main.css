@@ -58,8 +58,8 @@ header {
   top: 15px;
   left: 15px;
   right: 15px;
-  bottom:85px;
-  font-size: 3rem;
+  bottom: 85px;
+  font-size: 4rem;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -342,7 +342,7 @@ ul.breadcrumbs {
   padding: 20px;
   padding-right: 0 !important;
   /* important overrides media queries */
-  font-size: 13px;
+  font-size: 1.5em;
   font-weight: bold;
   text-align: center;
   color: #aaa;
@@ -360,9 +360,9 @@ ul.breadcrumbs {
 
 .breadcrumbs a span:first-child {
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  padding: 3px 5px;
+  width: 28px;
+  height: 28px;
+  padding: 4px 7px;
   margin-right: 5px;
   border: 2px solid #aaa;
   border-radius: 50%;
@@ -495,7 +495,7 @@ ul.breadcrumbs {
   font-family: 'PoorStory-Regular';
 }
 .item {
-  width: 500px;
+  width: 700px;
   display: inline-block;
   margin-top: 2rem;
   filter: grayscale(100%);
