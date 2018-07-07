@@ -23,8 +23,6 @@ class NavMenu extends Component {
     }
 
     highlightSection(key) {
-        console.log(this.props);
-        console.log(this.props.currentKey, key);
         return this.props.currentKey === key ? "selected" : "";
     }
 
