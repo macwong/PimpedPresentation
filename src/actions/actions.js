@@ -1,5 +1,5 @@
-import Actions from "../../js/actionkeys";
-import Helpers from "../../js/helpers";
+import Actions from "../js/actionkeys";
+import Helpers from "../js/helpers";
 
 export function onPolaroidClick() {
     return {

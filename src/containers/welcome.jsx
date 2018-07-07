@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Globals from '../../js/globals';
+import Globals from '../js/globals';
 import {onPolaroidClick} from '../actions/actions';
 
 class Welcome extends Component {

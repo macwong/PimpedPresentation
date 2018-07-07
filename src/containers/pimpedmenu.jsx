@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import SliderSection from '../components/slidersection';
 import NavMenu from '../containers/navmenu';
-import Globals from '../../js/globals';
+import Globals from '../js/globals';
 import Welcome from '../containers/welcome';
 
 class PimpedMenu extends Component {

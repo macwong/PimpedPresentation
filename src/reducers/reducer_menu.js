@@ -1,5 +1,5 @@
-import Actions from "../../js/actionkeys";
-import Globals from "../../js/globals";
+import Actions from "../js/actionkeys";
+import Globals from "../js/globals";
 
 export default function(state = {}, action) {
     switch (action.type) {
