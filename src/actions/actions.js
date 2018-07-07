@@ -10,11 +10,10 @@ export function onPolaroidClick() {
     };
 }
 
-export function onMenuClick(e) {
-    const section = e.currentTarget.dataset.section;
-    const showTitle = Helpers.ToBoolean(e.currentTarget.dataset.showtitle);
-    let title = e.currentTarget.dataset.title;
-    
+export function onMenuClick(dataset) {
+    const showTitle = Helpers.ToBoolean(dataset.showtitle);
+    let title = dataset.title;
+
     if (!showTitle) {
         title = "";
     }
@@ -22,8 +21,9 @@ export function onMenuClick(e) {
     return {
         type: Actions.MENU_CLICK,
         payload: {
+            selectedKey: dataset.key,
             isOpen: false,
-            selectedSection: section,
+            selectedSection: dataset.section,
             selectedTitle: title
         }
     }

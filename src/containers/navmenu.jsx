@@ -15,25 +15,26 @@ class NavMenu extends Component {
     }
 
     onMenuClick(e) {
-        this.props.onMenuClick(e);
+        this.props.onMenuClick(e.currentTarget.dataset);
     }
 
     updateIsOpen(state) {
         this.props.updateMenuIsOpen(state.isOpen);
     }
 
-    highlightSection(title) {
-        console.log(this.props.currentTitle, title);
-        return this.props.currentTitle === title ? "selected" : "";
+    highlightSection(key) {
+        console.log(this.props);
+        console.log(this.props.currentKey, key);
+        return this.props.currentKey === key ? "selected" : "";
     }
 
     render() {
         const sections = [
-            { title: "Welcome", section: Globals.sectionIDs.welcome, showTitle: false },
-            { title: "About", section: Globals.sectionIDs.about, showTitle: true },
-            { title: "Contact", section: Globals.sectionIDs.contact, showTitle: true },
-            { title: "Stuff", section: Globals.sectionIDs.stuff, showTitle: true },
-            { title: "Blah", section: Globals.sectionIDs.welcome, showTitle: false }
+            { key: "Welcome", title: "Welcome", section: Globals.sectionIDs.welcome, showTitle: false },
+            { key: "About", title: "About", section: Globals.sectionIDs.about, showTitle: true },
+            { key: "Contact", title: "Contact", section: Globals.sectionIDs.contact, showTitle: true },
+            { key: "Stuff", title: "Stuff", section: Globals.sectionIDs.stuff, showTitle: true },
+            { key: "Blah", title: "Blah", section: Globals.sectionIDs.welcome, showTitle: false }
         ];
 
         return (
@@ -50,10 +51,11 @@ class NavMenu extends Component {
                             sections.map((section) => {
                                 return (
                                     <a
-                                        className={this.highlightSection(section.title)} 
-                                        key={section.title} 
+                                        className={this.highlightSection(section.key)} 
+                                        key={section.key}
                                         href="#" 
                                         onClick={this.onMenuClick}
+                                        data-key={section.key}
                                         data-section={section.section}
                                         data-title={section.title}
                                         data-showtitle={section.showTitle}
