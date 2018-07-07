@@ -26,7 +26,7 @@ class Welcome extends Component {
                                 Facial Recognition<br />
                                 Is in your face
                             </div>
-                            <img src="face.jpg" />
+                            <img src="./images/face.jpg" />
                             <div className="caption">Dave McCormick</div>
                         </div>
                     </div>
